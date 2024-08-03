@@ -1,4 +1,3 @@
-/ # lsmod
 usrline 213132 4 - Live 0xbf392000
 rtl8192cd 876907 0 - Live 0xbf2b9000
 usb_led 1043 0 - Live 0xbf00b000
