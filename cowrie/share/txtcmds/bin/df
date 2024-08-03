@@ -1,0 +1,8 @@
+Filesystem           1k-blocks      Used Available Use% Mounted on
+/dev/root                20352     14500      5852  71% /
+/dev/mtdblock2            4096       420      3676  10% /tagparam
+tmpfs                    15360        56     15304   0% /var
+none                     45836         0     45836   0% /mnt
+/dev/mtdblock5            8192       632      7560   8% /userconfig
+/dev/mtdblock4            4096       384      3712   9% /usr/local/ct
+/dev/mtdblock8            4096       388      3708   9% /wlan

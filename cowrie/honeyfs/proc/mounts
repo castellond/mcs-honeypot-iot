@@ -1,0 +1,11 @@
+rootfs / rootfs rw 0 0
+/dev/root / jffs2 ro,relatime 0 0
+proc /proc proc rw,relatime 0 0
+sysfs /sys sysfs rw,relatime 0 0
+/dev/mtdblock2 /tagparam jffs2 rw,relatime 0 0
+tmpfs /var tmpfs rw,relatime,size=15360k 0 0
+none /mnt tmpfs rw,relatime 0 0
+/dev/mtdblock5 /userconfig jffs2 rw,relatime 0 0
+/dev/mtdblock4 /usr/local/ct jffs2 rw,relatime 0 0
+/dev/mtdblock8 /wlan jffs2 rw,relatime 0 0
+none /proc/bus/usb usbfs rw,relatime 0 0

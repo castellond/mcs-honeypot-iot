@@ -1,0 +1,17 @@
+/ # lsmod
+usrline 213132 4 - Live 0xbf392000
+rtl8192cd 876907 0 - Live 0xbf2b9000
+usb_led 1043 0 - Live 0xbf00b000
+redirusb 35699 0 [permanent], Live 0xbf2ae000
+dsp_dev 216937 4 - Live 0xbf270000
+voip_codec 334987 1 dsp_dev, Live 0xbf211000
+kudp 42079 2 dsp_dev,voip_codec, Live 0xbf201000
+optical 18568 0 - Live 0xbf1f6000
+switch 101522 0 - Live 0xbf1d3000
+gpondrv 23958 0 - Live 0xbf1c6000
+zte_gpon 258631 1 gpondrv, Live 0xbf172000
+netdriver 12588 0 - Live 0xbf168000
+tm 1168670 4 switch,gpondrv,zte_gpon,netdriver, Live 0xbf01d000
+peripheral 1977 0 - Live 0xbf017000
+zx_ponreg 2133 3 switch,zte_gpon,tm, Live 0xbf011000
+bspdriver 36526 8 usrline,optical,switch,gpondrv,zte_gpon,peripheral,[permanent], Live 0xbf000000
