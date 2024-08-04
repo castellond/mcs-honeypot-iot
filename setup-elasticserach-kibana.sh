@@ -7,9 +7,9 @@ echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | tee /etc/
 apt-get update
 
 apt install -y apt-transport-https wget default-jre
-apt install -y elasticsearch logstash kibana filebeat
+apt install -y elasticsearch kibana
 
-systemctl enable elasticsearch logstash kibana filebeat
+systemctl enable elasticsearch  kibana
 
 echo -e "Dependencies installed...\n\n"
 echo -e "Configuring ELK...\n\n"
@@ -21,15 +21,10 @@ if [ ! -d "/var/log/kibana" ]; then
     chown kibana:kibana /var/log/kibana
 fi
 
-# Create Geoip database directory
-echo -e "Creating directory for Geoip database...\n"
-mkdir -p /opt/logstash/vendor/geoip/
 
 echo -e "Copying configuration files...\n\n"
 declare -A config_files=(
   ["./elk/config/kibana.yml"]="/etc/kibana/kibana.yml"
-  ["./elk/config/filebeat-cowrie.conf"]="/etc/filebeat/filebeat.yml"
-  ["./elk/config/logstash-cowrie.conf"]="/etc/logstash/conf.d/logstash-cowrie.conf"
 )
 
 # Iterate over the files and their destinations
@@ -54,12 +49,11 @@ echo -e "ELK Configured\n\n"
 echo -e "Fixing permissions...\n\n"
 
 chown kibana:kibana /etc/kibana/kibana.yml
-chown logstash:logstash /etc/logstash/conf.d/logstash-cowrie.conf
 
 echo -e "Permissions Fixed...\n\n"
 
 echo -e "Restarting services...\n\n"
-systemctl restart elasticsearch logstash kibana filebeat
+systemctl restart elasticsearch kibana
 
 echo "Setup Completed"
 
