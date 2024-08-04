@@ -2,6 +2,11 @@
 
 echo -e "Installing dependencies...\n\n"
 
+wget -qO - https://packages.elastic.co/GPG-KEY-elasticsearch | apt-key add -
+echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | tee /etc/apt/sources.list.d/elastic-7.x.list
+apt-get update
+
+
 apt-get update
 apt install -y apt-transport-https wget default-jre
 apt install -y  logstash filebeat
