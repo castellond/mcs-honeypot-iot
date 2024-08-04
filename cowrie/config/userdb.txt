@@ -1,0 +1,7 @@
+root:x:root
+root:x:f680
+root:x:Zte521
+root:x:admin
+admin:x:admin
+1234:x:1234
+root:x:1234
